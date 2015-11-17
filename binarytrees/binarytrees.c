@@ -59,7 +59,7 @@ static void destroy_tree(Node *node)
     free(node);
 }
 
-void main(int argc, char **argv)
+int main(int argc, char **argv)
 {
     int n, maxDepth, stretchDepth, check, depth, iterations, i;
     Node *node, *longLived;
@@ -96,4 +96,6 @@ void main(int argc, char **argv)
     check = check_tree(longLived);
     printf("long lived tree of depth %d\t check: %d\n", maxDepth, check);
     destroy_tree(longLived);
+
+    return 0;
 }
