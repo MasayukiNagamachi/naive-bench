@@ -2,6 +2,7 @@
 // vim: set ft=c fenc=utf-8 ts=4 sw=4 et :
 
 // go build -o binarytrees-go binarytrees.go
+// time ./binarytrees-go 20
 
 package main
 
@@ -51,7 +52,7 @@ func main() {
             check += create(i, depth).Check()
             check += create(-i, depth).Check()
         }
-        fmt.Printf("%d\t trees of depth %d\t check: %d\n", iterations, depth, check)
+        fmt.Printf("%d\t trees of depth %d\t check: %d\n", 2 * iterations, depth, check)
     }
 
     fmt.Printf("long lived tree of depth %d\t check: %d\n", maxDepth, longLivedTree.Check())

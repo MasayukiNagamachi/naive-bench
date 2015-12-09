@@ -1,6 +1,7 @@
 // -*- mode: d; coding: utf-8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
 // vim: set ft=c fenc=utf-8 ts=4 sw=4 et :
 
+// gdc -O3 -o nbody-d nbody.d
 // time ./nbody-d 50000000
 
 import std.conv : to;

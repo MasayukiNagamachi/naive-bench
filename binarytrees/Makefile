@@ -2,6 +2,7 @@ PROGS = \
 	binarytrees-c \
 	binarytrees-d \
 	binarytrees-go \
+	binarytrees-nim \
 	binarytrees-java
 
 BENCHS = $(PROGS:%=bench-%)
@@ -18,6 +19,7 @@ bench: $(BENCHS)
 clean:
 	-@rm -f binarytrees-*
 	-@rm -f *.class
+	-@rm -rf nimcache
 
 binarytrees-c: binarytrees.c
 	@gcc -O3 -o $@ $^
@@ -27,6 +29,9 @@ binarytrees-d: binarytrees.d
 
 binarytrees-go: binarytrees.go
 	@go build -o $@ $^
+
+binarytrees-nim: binarytrees.nim
+	@nim -d:release -o:$@ $^
 
 binarytrees-java: binarytrees.class
 
@@ -41,6 +46,9 @@ bench-binarytrees-d: binarytrees-d
 
 bench-binarytrees-go: binarytrees-go
 	-@$(TIME) -f $(FMT) ./binarytrees-go 20 >/dev/null
+
+bench-binarytrees-nim: binarytrees-nim
+	-@$(TIME) -f $(FMT) ./binarytrees-nim 20 >/dev/null
 
 bench-binarytrees-java: binarytrees-java
 	-@$(TIME) -f $(FMT) java -server binarytrees 20 >/dev/null

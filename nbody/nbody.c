@@ -1,7 +1,9 @@
 /* -*- mode: c; coding: utf-8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
- * vim: set ft=c fenc=utf-8 ts=4 sw=4 et : */
-
-/* time ./nbody-c 50000000 */
+ * vim: set ft=c fenc=utf-8 ts=4 sw=4 et :
+ *
+ * gcc -O3 -o nbody-c nbody.c
+ * time ./nbody-c 50000000
+ */
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -107,7 +109,7 @@ void main(int argc, char **argv)
             .vz = 0.0,
             .mass = SOLAR_MASS
         },
-        /* jupter */
+        /* jupiter */
         {
             .x = 4.84143144246472090e+00,
             .y = -1.16032004402742839e+00,

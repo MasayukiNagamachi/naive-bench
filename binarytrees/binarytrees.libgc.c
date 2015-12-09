@@ -2,6 +2,7 @@
  * vim: set ft=c fenc=utf-8 ts=4 sw=4 et :
  *
  * gcc -O3 -o binarytrees-libgc-c binarytrees.libgc.c
+ * time ./binarytrees-libgc-c 20
  *
  */
 
@@ -79,7 +80,7 @@ void main(int argc, char **argv)
             node = create_tree(-i, depth);
             check += check_tree(node);
         }
-        printf("%d\t trees of depth %d\t check: %d\n", iterations, depth, check);
+        printf("%d\t trees of depth %d\t check: %d\n", 2 * iterations, depth, check);
     }
 
     check = check_tree(longLived);

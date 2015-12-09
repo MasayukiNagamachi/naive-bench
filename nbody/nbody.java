@@ -1,6 +1,7 @@
 // -*- mode: java; coding: utf-8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
 // vim: set ft=c fenc=utf-8 ts=4 sw=4 et :
 
+// javac nbody.java
 // time java -server nbody 50000000
 
 public final class nbody {

@@ -2,6 +2,7 @@ PROGS = \
 	nbody-c \
 	nbody-d \
 	nbody-go \
+	nbody-nim \
 	nbody-java
 
 BENCHS = $(PROGS:%=bench-%)
@@ -18,6 +19,7 @@ bench: $(BENCHS)
 clean:
 	-@rm -f nbody-*
 	-@rm -f *.class
+	-@rm -rf nimcache
 
 nbody-c: nbody.c
 	@gcc -O3 -o $@ $^ -lm
@@ -27,6 +29,9 @@ nbody-d: nbody.d
 
 nbody-go: nbody.go
 	@go build -o $@ $^
+
+nbody-nim: nbody.nim
+	@nim -d:release -o:$@ $^
 
 nbody-java: nbody.class
 
@@ -41,6 +46,9 @@ bench-nbody-d: nbody-d
 
 bench-nbody-go: nbody-go
 	-@$(TIME) -f $(FMT) ./nbody-go 50000000 >/dev/null
+
+bench-nbody-nim: nbody-nim
+	-@$(TIME) -f $(FMT) ./nbody-nim 50000000 >/dev/null
 
 bench-nbody-java: nbody-java
 	-@$(TIME) -f $(FMT) java -server nbody 50000000 >/dev/null

@@ -1,6 +1,9 @@
 // -*- mode: java; coding: utf-8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
 // vim: set ft=c fenc=utf-8 ts=4 sw=4 et :
 
+// javac binarytrees.java
+// time java -server binarytrees 20
+
 public final class binarytrees {
     private static final int MIN_DEPTH = 4;
 
@@ -22,7 +25,7 @@ public final class binarytrees {
                 check += Node.create(i, depth).check();
                 check += Node.create(-i, depth).check();
             }
-            System.out.printf("%d\t trees of depth %d\t check: %d\n", iterations, depth, check);
+            System.out.printf("%d\t trees of depth %d\t check: %d\n", 2 * iterations, depth, check);
         }
 
         System.out.printf("long lived tree of depth %d\t check: %d\n", maxDepth, longLived.check());

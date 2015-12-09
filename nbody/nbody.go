@@ -1,6 +1,7 @@
 // -*- mode: go; coding: utf-8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
 // vim: set ft=c fenc=utf-8 ts=4 sw=4 et :
 
+// go build -o nbody-go nbody.go
 // time ./nbody-go 50000000
 
 package main
@@ -103,7 +104,7 @@ func main() {
 			vz: 0.0,
 			mass: SolarMass,
 		},
-		// jupter
+		// jupiter
 		&Body{
 			x: 4.84143144246472090e+00,
 			y: -1.16032004402742839e+00,

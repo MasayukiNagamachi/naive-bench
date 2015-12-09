@@ -2,6 +2,7 @@
 // vim: set ft=c fenc=utf-8 ts=4 sw=4 et :
 
 // gdc -O3 -o binarytrees-d binarytrees.d
+// time ./binarytrees-d 20
 
 import std.algorithm : max;
 import std.conv : to;
@@ -56,7 +57,7 @@ void main(string[] args)
             check += Node.create(i, depth).check();
             check += Node.create(-i, depth).check();
         }
-        printf("%d\t trees of depth %d\t check: %d\n", iterations, depth, check);
+        printf("%d\t trees of depth %d\t check: %d\n", 2 * iterations, depth, check);
     }
 
     printf("long lived tree of depth %d\t check: %d\n", maxDepth, longLivedTree.check());
