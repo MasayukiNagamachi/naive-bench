@@ -31,7 +31,7 @@ nbody-go: nbody.go
 	@go build -o $@ $^
 
 nbody-nim: nbody.nim
-	@nim -d:release -o:$@ $^
+	@nim c -d:release -o:$@ $^
 
 nbody-java: nbody.class
 

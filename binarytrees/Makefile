@@ -31,7 +31,7 @@ binarytrees-go: binarytrees.go
 	@go build -o $@ $^
 
 binarytrees-nim: binarytrees.nim
-	@nim -d:release -o:$@ $^
+	@nim c -d:release -o:$@ $^
 
 binarytrees-java: binarytrees.class
 
